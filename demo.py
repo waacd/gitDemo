@@ -23,4 +23,14 @@ def add():
 def view():
     showinfo("学生成绩",dict_stu)
     return None
-#主界面函数，参数，无，返回值
+def main():
+    #关闭主窗口
+    close(top)
+    #创建主界面窗口以及三个按钮
+    main = Tk()
+    main.title("学生成绩管理系统")
+    button_add = Button(main,text = "添加成绩",command = add).pack()#添加成绩函数
+    button_view = Button(main,text = "查看成绩",command = view).pack()#查看成绩函数
+    button_exit = Button(main,text = "退出系统",command = lambda :close(main)).pack()
+    main.mainloop()
+    return None
