@@ -49,3 +49,22 @@ def login():
     else:
         showinfo(title = '登录失败',message = '用户名或密码错误')
     return None
+#创建教师账号，学生成绩字典
+dict_tech = {"admin1":{'pwd':"123456","name":'Lilaoshi'},"admin2":{'pwd':"1","name":'Zhangyuanshi'}}
+dict_stu = {'Zzb':'100'}
+#创建窗口
+top = Tk()
+top.title('学生管理系统')
+label_admin = Label(top,text = '用户名：')
+label_pwd = Label(top,text = '密码：')
+textbox_admin = Text(top,height = 1,width = 18)
+textbox_pwd = Text(top,height = 1,width = 18)
+button_log = Button(top,text = 'login',command = login)
+button_exit = Button(top,text = '退出',command = lambda:close(top))
+label_admin.grid_configure(column = 1,row = 1,columnspan = 1,rowspan = 1)
+label_pwd.grid_configure(column = 1,row = 2 ,columnspan = 1,rowspan = 1)
+textbox_admin.grid_configure(column = 2,row = 1,columnspan = 1,rowspan = 1)
+textbox_pwd.grid_configure(column = 2,row = 2,columnspan = 1,rowspan = 1)
+button_log.grid_configure(column = 1,row = 3,columnspan = 1,rowspan = 1)
+button_exit.grid_configure(column = 2,row = 3,columnspan = 1,rowspan = 1)
+top.mainloop()
