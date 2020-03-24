@@ -19,3 +19,8 @@ def add():
         dict_stu[stuname] = score
         showinfo('提示','添加成功！')
     return None
+#查看成绩函数：参数，返回无
+def view():
+    showinfo("学生成绩",dict_stu)
+    return None
+#主界面函数，参数，无，返回值
