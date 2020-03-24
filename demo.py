@@ -34,3 +34,18 @@ def main():
     button_exit = Button(main,text = "退出系统",command = lambda :close(main)).pack()
     main.mainloop()
     return None
+#登陆函数,参数，无，返回值None
+def login():
+    # 获取文本框内容
+    admin = textbox_admin.get(1.0, END)[0:-1]
+    pwd = textbox_pwd.get(1.0, END)[0:-1]
+    #若输入的用户名没有存在于字典中,调用tipFalse函数（用户名或密码错误）
+    if admin in dict_tech.keys():
+        #若密码符合，调用主界面函数(main())
+        if pwd == dict_tech[admin]['pwd']:
+            showinfo(title = '登陆成功',message = '欢迎，教师'+dict_tech[admin]['name'])
+            main()
+        else:showinfo(title = '登录失败',message = '用户名或密码错误')
+    else:
+        showinfo(title = '登录失败',message = '用户名或密码错误')
+    return None
